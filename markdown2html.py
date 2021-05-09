@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" Start a script that takes an argument 2 strings """
+""" Copy file form arg 1 and name it with arg 2 value """
 from sys import argv, stderr
 from shutil import copyfile
 
 
 if __name__ == "__main__":
-    """ Check existence of README and return respectively errors """
+    """ Copy files or exit and error to stderr """
     if len(argv) < 3:
         stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         exit(1)
