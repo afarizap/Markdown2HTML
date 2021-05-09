@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Copy file form arg 1 and name it with arg 2 value """
 from sys import argv, stderr
-from shutil import copyfile
 
 
 if __name__ == "__main__":
@@ -12,6 +11,6 @@ if __name__ == "__main__":
     try:
         copyfile(argv[1], argv[2])
         exit(0)
-    except IOError:
+    except:
         stderr.write("Missing {}\n".format(argv[1]))        
         exit(1)
