@@ -9,7 +9,6 @@ if __name__ == "__main__":
         stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         exit(1)
     try:
-        copyfile(argv[1], argv[2])
         exit(0)
     except:
         stderr.write("Missing {}\n".format(argv[1]))        
