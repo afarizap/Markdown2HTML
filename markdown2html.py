@@ -6,7 +6,7 @@ from shutil import copyfile
 
 if __name__ == "__main__":
     """ Check existence of README and return respectively errors """
-    if len(argv) < 2:
+    if len(argv) < 3:
         stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         exit(1)
     try:
