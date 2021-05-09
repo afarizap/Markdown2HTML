@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Start a script that takes an argument 2 strings """
 from sys import argv, stderr
+from shutil import copyfile
 
 
 if __name__ == "__main__":
@@ -9,9 +10,8 @@ if __name__ == "__main__":
         print("Usage: ./markdown2html.py README.md README.html")
         exit(1)
     try:
-        with open(argv[1]) as f:
-            exit(0)
+        copyfile(argv[1], argv[2])
+        exit(0)
     except IOError:
-        print("Missing {}".format(argv[1]))
+        print("Missing {}".format(argv[1]), file=stderr)
         exit(1)
-
