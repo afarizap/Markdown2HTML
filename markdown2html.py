@@ -12,7 +12,12 @@ if __name__ == "__main__":
         with open(argv[1], "r") as f1, open(argv[2], "w") as f2:
             f1_lines = f1.readlines()
             for line in f1_lines:
-                f2.write(line)    
+                if line[0] == "#":
+                    hlevel = len(line) - len(line.lstrip("#"))
+                    l = line.strip(" #\n")
+                    f2.write("<h{}>".format(hlevel) + l + "</h{}>".format(hlevel) + "\n")
+                else:
+                    f2.write(line)    
         exit(0)
     except IOError:
         stderr.write("Missing {}\n".format(argv[1]))
