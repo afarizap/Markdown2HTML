@@ -7,11 +7,11 @@ from shutil import copyfile
 if __name__ == "__main__":
     """ Check existence of README and return respectively errors """
     if len(argv) < 2:
-        print("Usage: ./markdown2html.py README.md README.html")
+        stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         exit(1)
     try:
         copyfile(argv[1], argv[2])
         exit(0)
     except IOError:
-        print("Missing {}".format(argv[1]), file=stderr)
+        stderr.write("Missing {}\n".format(argv[1]))        
         exit(1)
